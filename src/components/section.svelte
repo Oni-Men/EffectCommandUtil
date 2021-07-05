@@ -1,0 +1,63 @@
+<script>
+	export let command;
+	export let runDetail;
+	export let param;
+
+	let stored = true;
+
+	function handleClick(event) {
+		stored = !stored;
+	}
+</script>
+
+<div class="section">
+	{#if stored}
+		<h3 class="command" on:click={handleClick}>{command}</h3>
+	{:else}
+		<h3 class="command" on:click={handleClick}>{command}</h3>
+		<p>{runDetail}</p>
+		<table class="param">
+			<tr>
+				<th>名前</th>
+				<th>型</th>
+				<th colspan="2">値</th>
+			</tr>
+			{#each param as p}
+				<tr>
+					{#each p as cell}
+						<td>{cell}</td>
+					{/each}
+				</tr>
+			{/each}
+		</table>
+	{/if}
+</div>
+
+<style>
+	.section {
+		margin: 0.5em 0;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 0 0.2em;
+	}
+
+	.command {
+		cursor: pointer;
+	}
+
+	.param {
+		border-collapse: collapse;
+		margin: 0.5em;
+	}
+
+	.param th,
+	.param td {
+		padding: 0.2em 0.4em;
+		border: 1px solid #ddd;
+	}
+
+	.param th {
+		text-align: center;
+		font-weight: bolder;
+	}
+</style>
