@@ -11,11 +11,11 @@
 </script>
 
 <div class="section">
-	{#if stored}
-		<h3 class="command" on:click={handleClick}>{command}</h3>
-	{:else}
-		<h3 class="command" on:click={handleClick}>{command}</h3>
+	<div class="header" on:click={handleClick}>
+		<h3 class="command"><span class="marker">{stored ? "▶" : "▼"}</span>{command}</h3>
 		<p>{runDetail}</p>
+	</div>
+	{#if !stored}
 		<table class="param">
 			<tr>
 				<th>名前</th>
@@ -41,7 +41,15 @@
 		padding: 0 0.2em;
 	}
 
-	.command {
+	.marker {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+	}
+
+	.header {
 		cursor: pointer;
 	}
 
