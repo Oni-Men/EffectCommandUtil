@@ -20,7 +20,7 @@
 			<tr>
 				<th>名前</th>
 				<th>型</th>
-				<th>値</th>
+				<th>初期値</th>
 				<th>説明</th>
 			</tr>
 			{#each param as p}
