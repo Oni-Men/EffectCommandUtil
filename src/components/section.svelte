@@ -13,9 +13,9 @@
 <div class="section">
 	<div class="header" on:click={handleClick}>
 		<h3 class="command"><span class="marker">{stored ? "▶" : "▼"}</span>{command}</h3>
-		<p>{runDetail}</p>
 	</div>
 	{#if !stored}
+		<p>{runDetail}</p>
 		<table class="param">
 			<tr>
 				<th>名前</th>
