@@ -20,7 +20,8 @@
 			<tr>
 				<th>名前</th>
 				<th>型</th>
-				<th colspan="2">値</th>
+				<th>値</th>
+				<th>説明</th>
 			</tr>
 			{#each param as p}
 				<tr>
